@@ -6,7 +6,7 @@ function Layout({ children }) {
             <header>
                 <Navbar />
             </header>
-            <main className='mt-5' >{children}</main>
+            <main className='mt-5 mb-16' >{children}</main>
         </>
     )
 }

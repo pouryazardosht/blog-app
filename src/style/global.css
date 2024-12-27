@@ -13,7 +13,7 @@
 
 @layer components {
   .blog-card {
-    @apply flex-col md:flex-row bg-base-100 flex gap-6 items-center rounded-xl shadow-xl max-w-[900px] hover:scale-105 cursor-pointer active:scale-100 hover:text-secondary;
+    @apply flex-col md:flex-row bg-base-100 flex gap-6 items-center rounded-xl shadow-xl max-w-[900px] md:hover:scale-105 cursor-pointer active:scale-100 hover:text-secondary;
   }
 
   .blog-card img {
