@@ -2,8 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  transition: all 150ms;
+}
 @layer base {
   body {
     @apply m-auto max-w-[1200px] min-h-[100vh];
+  }
+}
+
+@layer components {
+  .blog-card {
+    @apply flex-col md:flex-row bg-base-100 flex gap-6 items-center rounded-xl shadow-xl max-w-[900px] hover:scale-105 cursor-pointer active:scale-100 hover:text-secondary;
+  }
+
+  .blog-card img {
+    @apply md:rounded-s-xl max-w-96;
+  }
+  .blog-card .card-content {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 16px;
+    max-height: 32px; 
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
 }

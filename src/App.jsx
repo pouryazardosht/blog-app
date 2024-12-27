@@ -1,8 +1,10 @@
 import Router from "./routes/Router"
-
+import Layout from './layout/Layout'
 function App() {
   return (
-    <Router />
+    <Layout>
+      <Router />
+    </Layout>
   )
 }
 
