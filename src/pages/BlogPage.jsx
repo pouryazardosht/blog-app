@@ -40,7 +40,7 @@ function BlogPage() {
                                         {blog.updatedAt}
                                     </p>
                                 </div>
-                                <div className="px-3">
+                                <div className="px-6">
                                     <p className="text-justify text-[16px] md:text-[19px]">
                                         {blog.content}
                                     </p>
