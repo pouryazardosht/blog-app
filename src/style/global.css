@@ -17,7 +17,7 @@
   }
 
   .blog-card img {
-    @apply md:rounded-s-xl max-w-96;
+    @apply rounded-xl md:rounded-s-xl max-w-96;
   }
   .blog-card .card-content {
     overflow: hidden;
