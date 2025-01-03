@@ -7,13 +7,17 @@ function HomePage() {
     useEffect(() => {
         const fetchBlogs = async () => {
             try {
-                setBlogs(await api.get("/posts"))
+                const localBlogs = JSON.parse(localStorage.getItem("blogs")) || [];
+                const apiBlogs = await api.get('/posts');
+                const combinedBlogs = [...localBlogs, ...apiBlogs];
+                setBlogs(combinedBlogs);
             } catch (error) {
                 console.log(error.message);
             }
         }
         fetchBlogs();
     }, [])
+    console.log(blogs);
     return (
         <div className="md:px-10">
             <h1 className="text-4xl font-bold ml-5 my-8"> Blogs</h1>

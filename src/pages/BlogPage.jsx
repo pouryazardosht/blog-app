@@ -6,7 +6,7 @@ import { CgProfile } from "react-icons/cg";
 import { SlCalender } from "react-icons/sl";
 function BlogPage() {
     const { id } = useParams();
-    const [blog, setBlog] = useState()
+    const [blog, setBlog] = useState();
     useEffect(() => {
         const fetchBlog = async (id) => {
             try {

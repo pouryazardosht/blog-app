@@ -1,15 +1,20 @@
 import { useState } from "react"
-
 function CreatePage() {
     const generateUniqueId = () => Math.floor(Math.random() * 1000000) + Date.now();
 
+    const dateHandler = () => {
+        const date = new Date();
+        const formattedDate = date.toLocaleString('en-US', { timeZoneName: 'short' });
+        console.log(formattedDate);
+        return formattedDate.split(',', [1]);
+    }
     const initialBlogState = {
-        image: "/public/image.png",
+        image: "https://dummyimage.com/200x200/e58ea9/massa.png&text=jsonplaceholder.org",
         id: generateUniqueId(),
         title: "",
         author: "",
         content: "",
-        updatedAt: new Date().toISOString(),
+        updatedAt: dateHandler()
     };
 
     const [blog, setBlog] = useState(initialBlogState);
@@ -28,7 +33,7 @@ function CreatePage() {
         }
 
         try {
-            const newBlog = { ...blog, id: generateUniqueId(), updatedAt: new Date().toISOString() };
+            const newBlog = { ...blog, id: generateUniqueId(), updatedAt: dateHandler() };
             const existingBlogs = JSON.parse(localStorage.getItem("blogs")) || [];
             const updatedBlogs = [...existingBlogs, newBlog];
             localStorage.setItem("blogs", JSON.stringify(updatedBlogs));
